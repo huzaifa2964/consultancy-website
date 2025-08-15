@@ -1,9 +1,9 @@
 /********** Template CSS **********/
 :root {
-    --primary: #F3525A;
+    --primary: #0071bc;
     --secondary: #F6F6F6;
     --light: #FFFFFF;
-    --dark: #152440;
+    --dark: #005a99;
 }
 
 h1,
@@ -45,6 +45,7 @@ h6,
 
 .btn-primary {
     color: #FFFFFF;
+    background-color: #0071bc;
 }
 
 .btn-square {
@@ -251,4 +252,41 @@ h6,
 
 .blog-item:hover img {
     transform: scale(1.1);
+}
+
+/* === Primary color overrides (force blue/white) === */
+.text-primary,
+.text-primary a,
+.text-primary i {
+    color: #0071bc !important;
+}
+
+.bg-primary,
+.bg-primary * {
+    background-color: #0071bc !important;
+    color: #ffffff !important;
+}
+
+.btn-primary {
+    background-color: #0071bc !important;
+    border-color: #0071bc !important;
+    color: #ffffff !important;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #005a99 !important;
+    border-color: #005a99 !important;
+}
+
+/* navbar/shape accents */
+.top-shape::before {
+    background: #0071bc !important;
+}
+
+/* safe icon color */
+.text-primary .fa,
+.text-primary .fas,
+.text-primary .far,
+.text-primary .bi {
+    color: #0071bc !important;
 }

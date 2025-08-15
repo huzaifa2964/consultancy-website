@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>CONSULT - Consultancy Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta content="Future link study abbroad" name="keywords">
+    <meta content="Future link study abbroad" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -108,29 +108,35 @@
         <div class="row g-0">
             <div class="col-lg-6 py-6 px-5">
                 <h1 class="display-5 mb-4">Contact For Any Queries</h1>
-                <form>
+                <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+                    <!-- Web3Forms integration -->
+                    <input type="hidden" name="access_key" value="414a745b-258f-47c1-9444-5aa3bff82714">
+                    <input type="hidden" name="redirect" value="contact.html?success=true">
+
+                    <div id="form-alert" class="alert d-none"></div>
+
                     <div class="row g-3">
                         <div class="col-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="form-floating-1" placeholder="John Doe">
+                                <input type="text" name="name" class="form-control" id="form-floating-1" placeholder="John Doe" required>
                                 <label for="form-floating-1">Full Name</label>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="form-floating-2" placeholder="name@example.com">
+                                <input type="email" name="email" class="form-control" id="form-floating-2" placeholder="name@example.com" required>
                                 <label for="form-floating-2">Email address</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="form-floating-3" placeholder="Subject">
+                                <input type="text" name="subject" class="form-control" id="form-floating-3" placeholder="Subject">
                                 <label for="form-floating-3">Subject</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Message" id="form-floating-4" style="height: 150px"></textarea>
+                                <textarea name="message" class="form-control" placeholder="Message" id="form-floating-4" style="height: 150px" required></textarea>
                                 <label for="form-floating-4">Message</label>
                               </div>
                         </div>
@@ -224,6 +230,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <!-- No custom JS: form will submit directly to Web3Forms via native browser POST -->
 </body>
 
 </html>
