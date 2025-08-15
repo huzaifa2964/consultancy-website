@@ -290,3 +290,108 @@ h6,
 .text-primary .bi {
     color: #0071bc !important;
 }
+
+/* === Header mobile responsiveness + hero height adjustments === */
+
+/* Reduce heavy horizontal navbar padding on smaller screens and scale logo */
+.navbar {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+@media (max-width: 991.98px) {
+    .navbar {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .navbar-brand img {
+        height: 55px;
+        width: auto;
+    }
+    .navbar-toggler {
+        margin-left: auto;
+    }
+    .navbar-nav {
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+    }
+    .navbar-nav .nav-link {
+        padding: .75rem 0;
+        font-size: 1rem;
+    }
+}
+
+/* smaller phones */
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 48px;
+    }
+    .navbar-light .navbar-nav .nav-link {
+        padding: 10px 0;
+        font-size: 0.95rem;
+    }
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+/* Increase hero (carousel) height site-wide; scale down for smaller viewports */
+#header-carousel .carousel-item {
+    min-height: 600px;
+}
+#header-carousel .carousel-item img,
+.carousel-item img {
+    height: 600px;
+    object-fit: cover;
+    width: 100%;
+}
+
+@media (max-width: 991.98px) {
+    #header-carousel .carousel-item { min-height: 480px; }
+    #header-carousel .carousel-item img,
+    .carousel-item img { height: 480px; }
+}
+
+@media (max-width: 576px) {
+    #header-carousel .carousel-item { min-height: 360px; }
+    #header-carousel .carousel-item img,
+    .carousel-item img { height: 360px; }
+    .carousel-caption .p-3 { padding: 1rem; max-width: 90%; }
+    .display-1 { font-size: 2rem; line-height: 1.1; }
+    .btn { padding-top: .6rem; padding-bottom: .6rem; }
+}
+
+/* small tweak so topbar/brand don't push carousel up on very small screens */
+body > .container-fluid.p-0 { margin-top: 0; }
+
+/* Mobile header: force single-row layout with brand left and toggler right */
+@media (max-width: 576px) {
+    .navbar {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    .navbar-brand {
+        order: 1;
+        padding: 0;
+        margin: 0;
+    }
+    .navbar-brand img {
+        height: 48px;
+        width: auto;
+    }
+    .navbar-toggler {
+        order: 2;
+        margin: 0;
+        padding: 6px 10px;
+    }
+    /* keep the collapsed menu below when opened */
+    .navbar-collapse {
+        order: 3;
+        width: 100%;
+    }
+}
