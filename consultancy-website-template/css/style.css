@@ -254,6 +254,60 @@ h6,
     transform: scale(1.1);
 }
 
+/* Logo carousel (Affiliated with) */
+.logo-carousel .logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.logo-carousel .logo-item img {
+    max-height: 60px;
+    opacity: 0.9;
+    filter: grayscale(0%);
+    transition: transform .3s ease, opacity .3s ease;
+}
+.logo-carousel .logo-item img:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+@media (max-width: 991.98px) {
+    .logo-carousel .logo-item img { max-height: 50px; }
+}
+@media (max-width: 576px) {
+    .logo-carousel .logo-item img { max-height: 42px; }
+}
+
+/* Animated heading for Affiliated section */
+.affiliated-heading {
+    display: inline-block;
+    position: relative;
+    color: var(--dark);
+    font-weight: 600;
+    overflow: hidden;
+}
+.affiliated-heading::after {
+    content: '';
+    position: absolute;
+    left: -40%;
+    top: 0;
+    height: 100%;
+    width: 60%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-20deg);
+    animation: sweep 2.2s linear infinite;
+}
+
+@keyframes sweep {
+    0% { left: -60%; }
+    100% { left: 120%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .affiliated-heading::after { animation: none; }
+}
+
 /* === Primary color overrides (force blue/white) === */
 .text-primary,
 .text-primary a,

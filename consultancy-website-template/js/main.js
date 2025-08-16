@@ -55,6 +55,25 @@
             '<i class="bi bi-arrow-right"></i>'
         ],
     });
+
+    // Logo carousel (Affiliated with)
+    $(".logo-carousel").owlCarousel({
+        autoplay: true,
+        autoplayTimeout: 2500,
+        autoplayHoverPause: true,
+        smartSpeed: 800,
+        loop: true,
+        dots: false,
+        nav: false,
+        margin: 10,
+        responsive: {
+            0: { items: 2 },
+            576: { items: 3 },
+            768: { items: 4 },
+            992: { items: 5 },
+            1200: { items: 6 }
+        }
+    });
     
 })(jQuery);
 
